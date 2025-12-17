@@ -19,28 +19,20 @@ The platform generates **real-time, topic-specific quizzes**, evaluates response
 ## 📸 Application Screenshots
 
 ### 🏠 Landing Page
+![Landing Page](./screenshots/landing.png)
 
-::contentReference[oaicite:0]{index=0}
+### 📊 Dashboard & Analytics
+![Dashboard](./screenshots/dashboard.png)
 
+### 📚 Subject Selection
+![Subjects](./screenshots/subjects.png)
 
-### 📊 User Dashboard & Performance Analytics
+### ❓ Live Quiz Interface
+![Quiz](./screenshots/quiz.png)
 
-::contentReference[oaicite:1]{index=1}
+### 🏆 Results Page
+![Results](./screenshots/results.png)
 
-
-### 📚 Subject Selection (UPSC Categories)
-
-::contentReference[oaicite:2]{index=2}
-
-
-### ❓ Live Quiz Interface (Timed)
-
-::contentReference[oaicite:3]{index=3}
-
-
-### 🏆 Results & Answer Review
-
-::contentReference[oaicite:4]{index=4}
 
 
 ---
