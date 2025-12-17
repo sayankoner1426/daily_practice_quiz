@@ -91,7 +91,7 @@ export default function ResultPage({ params }) {
                     </h1>
 
                     <p className="text-lg text-gray-300 mb-6">
-                        You got **{score}** out of {totalQuestions} in the **{subject}** quiz.
+                        You got <span className='font-extrabold text-2xl text-red-400'>{score}</span> out of {totalQuestions} in the {subject} quiz.
                     </p>
 
                     <div className="text-md font-semibold text-gray-400 mb-8">

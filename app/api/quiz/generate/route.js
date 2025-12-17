@@ -61,7 +61,7 @@ async function generateQuestionsInBackground(quizId, topic) {
     }`;
 
     const result = await ai.models.generateContent({
-      model: "gemini-2.5-pro", 
+      model: "gemini-2.5-flash", 
       contents: [{ role: "user", parts: [{ text: prompt }] }],
     });
 
@@ -78,7 +78,7 @@ async function generateQuestionsInBackground(quizId, topic) {
         throw new Error("AI returned empty text");
     }
 
-    // Clean and Parse JSON safely
+    // clean and parse JSON safely
     const questions = cleanAndParseJSON(rawText);
 
     if (!questions || questions.length === 0) {
@@ -111,23 +111,3 @@ async function generateQuestionsInBackground(quizId, topic) {
     });
   }
 }
-
-// // --JSON Parser--
-// function cleanAndParseJSON(text) {
-//     try {
-//         //remove markdown code blocks
-//         let cleanText = text.replace(/```json/g, "").replace(/```/g, "").trim();
-
-//         // remove any control characters that might break JSON parsing
-//         cleanText = cleanText.replace(/[\x00-\x1F\x7F]/g, (char) => {
-//              // valid JSON whitespace
-//             if (char === '\n' || char === '\r' || char === '\t') return char; 
-//             return ''; 
-//         });
-
-//         return JSON.parse(cleanText);
-//     } catch (e) {
-//         console.error("JSON Parse failed. Text was:", text);
-//         throw e;
-//     }
-// }
