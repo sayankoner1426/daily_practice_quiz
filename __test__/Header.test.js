@@ -2,8 +2,7 @@ import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import Header from '../components/Header';
 import '@testing-library/jest-dom';
 
-// 1. MOCK (Fake) the Next.js Router
-// We don't want to actually change pages during a test, just check if it tries to.
+
 const mockPush = jest.fn();
 jest.mock('next/navigation', () => ({
   useRouter: () => ({
@@ -14,7 +13,7 @@ jest.mock('next/navigation', () => ({
 describe('Header Component', () => {
   
   beforeEach(() => {
-    // Clear mocks before each test so previous tests don't interfere
+    // clear mocks before each test so previous tests don't interfere
     mockPush.mockClear();
     localStorage.clear();
     jest.clearAllMocks();
@@ -28,12 +27,12 @@ describe('Header Component', () => {
   });
 
   test('shows "Hello, TestUser" when logged in', async () => {
-    // 1. Fake a logged-in user in LocalStorage
+    // fake a logged-in user in LocalStorage
     Storage.prototype.getItem = jest.fn(() => 'TestUser');
 
     render(<Header />);
 
-    // 2. Wait for the useEffect to grab the username
+    // wait for the useEffect to grab the username
     await waitFor(() => {
         const greeting = screen.getByText(/Hello, TestUser/i);
         expect(greeting).toBeInTheDocument();

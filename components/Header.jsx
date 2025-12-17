@@ -41,7 +41,7 @@ export default function Header() {
         
         {/* Logo */}
         <Link href="/" className="flex items-center space-x-2 text-xl font-bold text-yellow-400">
-          🧠 DAILY QUIZ
+          🧠 UPSC Quiz Hub
         </Link>
 
         {/* header components */}
